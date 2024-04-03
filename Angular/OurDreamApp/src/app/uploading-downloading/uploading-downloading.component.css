@@ -1,0 +1,11 @@
+
+.uploadButtonStyle {
+    color:white; 
+    background-color: rgb(177, 231, 177);
+    font-size: 30px; padding: 30px ;
+}
+.downloadButtonStyle {
+    color:white;
+    background-color: rgb(255, 0, 21);
+    font-size: 30px;padding: 30px ;
+}

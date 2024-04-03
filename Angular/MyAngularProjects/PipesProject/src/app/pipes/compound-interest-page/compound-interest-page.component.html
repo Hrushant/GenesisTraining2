@@ -1,0 +1,27 @@
+<h2 [ngStyle]="{'text-align':'center', 'background-color':'skyblue', 'padding':'10px'}">Compound Interest Calculator</h2>
+
+<h1>Compound Interest Formula = P * (1 + r/n )^nt</h1>
+<table>
+    <tr>
+        <td>Principle (p): </td>
+        <td><input type="number" [(ngModel)]="principal"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Rate of interest (r): </td>
+        <td><input type="number" [(ngModel)]="rateOfInterest"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Time period (years) (t): </td>
+        <td><input type="number" [(ngModel)]="timePeriod"> 
+        </td>
+    </tr>
+    <tr>
+        <td>Compounding Frequency (n): </td>
+        <td><input type="number" [(ngModel)]="compoundingFrequency"> 
+        </td>
+    </tr>
+</table>
+
+<h3>Compound interest : {{principal | compoundInterest : rateOfInterest : timePeriod : compoundingFrequency | currency: 'INR'}}</h3>

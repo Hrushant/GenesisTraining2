@@ -1,0 +1,16 @@
+<table border="3" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <td>Book Id</td>
+        <td>Book Name</td>
+        <td>Book Price</td>
+    </tr>
+    <tr>
+        <td><input type="number" [(ngModel)]="book.bookId"></td>
+        <td><input type="text" [(ngModel)]="book.bookName"></td>
+        <td><input type="number" [(ngModel)]="book.bookPrice"></td>
+    </tr>
+
+    <tr>
+        <button (click)="localEditBookService()">Modify Book</button>
+    </tr>
+</table>

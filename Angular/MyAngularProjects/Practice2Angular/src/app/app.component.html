@@ -1,0 +1,19 @@
+<!-- <app-like-dis-like></app-like-dis-like>
+
+<app-home></app-home>
+
+<app-compound-interest></app-compound-interest>
+ -->
+
+ <!-- <app-fund-transfer></app-fund-transfer> -->
+
+ <!-- -------------------------------------------------------------- -->
+
+ <ul [ngStyle]="{'list-style-type':'none','display':'flex','justify-content':'left'}">
+    <li><button [ngStyle]="{'padding':'10px','background-color':'pink'}"><a routerLink="/AddBook">Add new Book</a></button></li>
+    <li><button [ngStyle]="{'padding':'10px','background-color':'grey'}"><a routerLink="/ViewAllBooks">View all Books</a></button></li>
+    <li><button [ngStyle]="{'padding':'10px','background-color':'pink'}"><a routerLink="/ViewSingleBook">View Single Book</a></button></li>
+    <li><button [ngStyle]="{'padding':'10px','background-color':'grey'}"><a routerLink="/EditBook">Edit a Book</a></button></li>
+    <li><button [ngStyle]="{'padding':'10px','background-color':'pink'}"><a routerLink="/DeleteBook">Delete a Book</a></button></li>
+ </ul>
+ <router-outlet></router-outlet>

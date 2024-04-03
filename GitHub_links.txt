@@ -1,0 +1,8 @@
+1] Java / SQL --> Vishal Sir --> https://github.com/vishhaldawane/KPITOCT2023 --> main/master
+2] AWS --> Mahendra Shinde Sir --> https://github.com/mahendra-shinde/aws-kpit/tree/main
+3] Journals --> https://kpitc.sharepoint.com/sites/IN2310BT01_P_DigitalTrack/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FIN2310BT01%5FP%5FDigitalTrack%2FShared%20Documents%2FGeneral%2FJournal%20Submission&p=true&ga=1
+
+
+localhost:4200
+localhost:8080
+ 

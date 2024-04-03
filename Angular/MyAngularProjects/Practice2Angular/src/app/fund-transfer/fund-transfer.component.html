@@ -1,0 +1,28 @@
+<table border="5" [cellPadding]="5" [cellPadding]="5">
+    <tr>
+        <td>Account number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+    <td>{{sourceAccount.accNo}}</td>
+    <td>{{sourceAccount.accHolderName}}</td>
+    <td>{{sourceAccount.accBal}}</td>
+</tr>
+</table>
+
+<table border="5" [cellPadding]="5" [cellPadding]="5">
+    <tr>
+        <td>Account number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+    <td>{{targetAccount.accNo}}</td>
+    <td>{{targetAccount.accHolderName}}</td>
+    <td>{{targetAccount.accBal}}</td>
+</tr>
+</table>
+
+<input type="number" [(ngModel)]="amount">
+<button (click)="localTransfer()">Transfer</button>

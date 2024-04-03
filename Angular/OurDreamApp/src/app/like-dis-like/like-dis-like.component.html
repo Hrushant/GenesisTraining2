@@ -1,0 +1,17 @@
+<p>like-dis-like works!</p>
+
+
+<br> 
+<button
+    (click)="increaseLikes()"    
+    [ngClass]="likeButton">
+    {{likeLabel}}
+    {{likeCount}}
+</button>
+
+<button 
+    (click)="decreaseLikes()"    
+    [ngClass]="disLikeButton">
+    {{disLikeLabel}}
+    {{disLikeCount}}
+</button>

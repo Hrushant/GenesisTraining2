@@ -1,0 +1,18 @@
+<h1 [ngStyle]="{'color':'black','background-color':'pink','display': 'flex',
+'justify-content': 'center'}">Login Registration Page</h1>
+
+<div class="buttonStyle">
+    <button (click)="loginPage()">{{loginLabel}}</button>
+    <button (click)="registerPage()">{{registerLabel}}</button>
+</div>
+<div class="container">
+<ng-template *ngIf="isUserLoggedIn == true ; then ifBlock else elseBlock"></ng-template>
+
+<ng-template #ifBlock>
+    <app-login></app-login>
+</ng-template>
+
+<ng-template #elseBlock>
+    <app-register></app-register>
+</ng-template>
+</div>

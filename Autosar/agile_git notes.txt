@@ -1,0 +1,33 @@
+KAP - KPIT Agile Planning - used as a project management tool
+
+git repository/git GUI  --> using this do the single push,single commit, multiple commits,multiple push.
+for pool from git --> command --> git pool origin master -->then enter username and pasword
+
+
+suppose accidently deleted file in git then we can reset it by using-->
+git log  //shows all the logs including deleted one
+git reset --hard (link)
+
+
+for seeing status in Git--> git status <--command is used.
+
+
+git amend --> allows to change in previous files, we can re-word it,make changes in that,add missing file in that.
+git commit --amend
+
+
+git amend squash-->remove the commit
+git amend reword-->rename the commited files
+
+
+Git cherry pick --> In that you can pick commit from one branch and add it in another branch.
+
+
+Git stash --> Git stash is a useful command that allows you to temporarily save your changes and switch 
+between branches. By using git stash, you can preserve your work in progress, simplify collaboration, and 
+experiment with different code changes in a safe manner.
+benefits of using git stash:
+Quickly save your changes
+Apply stash in a different position
+Save changes that you need often
+

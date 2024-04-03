@@ -1,0 +1,23 @@
+--AUTOSAR--
+-Automotive industry coping up with increasing complexity
+-BSW Standardisation
+-Hardware Abstraction
+-Reusability of function
+-Standardisation of exchange formats
+
+Microcontroller abstraction layer-->
+it is lowest layer of basic software 
+
+ECU Abstraction Layer-->
+it interfaces drivers of the microcontroler
+abstraction layer. it also contains drivers for external devices.
+
+Complex drivers layer-->
+it spans from hardware to RTE. 
+
+Service Layer-->
+it is highest layer of basic software which applies for its relevance for application software: while access to I/O signals is covered by the ECU abstraction layer, the services layer offeres:
+OS Functionality
+Memory services
+ECU state management, mode management
+

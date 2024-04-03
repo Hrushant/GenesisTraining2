@@ -1,0 +1,22 @@
+Create class customer
+-custId, cName, cAge
+---------------------------------
+Account
+-accNo, name,balance
+---------------------------------
+student
+-rollNo,sname,mark
+---------------------------------
+
+default constructor
+para constructor
+display
+
+main(){
+    create one obj using default constructor
+    create one obj using para constructor
+    create one obj using para constructor on heap memory
+    display all obj
+    create array of 3 obj and display them 
+    free memory
+}

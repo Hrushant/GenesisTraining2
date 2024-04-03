@@ -1,0 +1,8 @@
+AWS --->
+
+cloud service models-->
+IaaS-Infrastructure as a service-offers better control for IT admins-EC2, VPC, Elastic load balancer, S3
+
+PaaS- platform as a service - easy to use platform for developers- Elastic beanStalk, Lambda, RDS
+
+

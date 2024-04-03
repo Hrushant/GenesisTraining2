@@ -1,0 +1,15 @@
+.container {
+    list-style-type: none;
+    background-color: rgb(213, 218, 216);
+    display: flex;
+    justify-content: left;
+}
+
+.container2 {
+    background-color: rgb(213, 218, 216);
+}
+
+.container3 {
+    display: flex;
+    justify-content: center;
+}

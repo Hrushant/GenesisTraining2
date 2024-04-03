@@ -1,0 +1,19 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "kubercabsdatabasehrushant.cn6qkoww88oi.ap-northeast-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "kuberCabsDb",
+            "database": "sys",
+            "username": "admin",
+            "password": "Password!123"
+        }
+    ]
+}

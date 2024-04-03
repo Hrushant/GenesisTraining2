@@ -1,0 +1,101 @@
+<p>funds-transfer-page works!</p>
+<!-- array -->
+<!-- <table>
+    <tr *ngFor="let s of sourceAccounts">
+        <td> {{s}} </td>
+    </tr>
+</table>
+<hr>
+<table>
+    <tr *ngFor="let t of targetAccounts">
+        <td> {{t}} </td>
+    </tr>
+</table>
+<hr>
+
+Source : <select>
+    <option *ngFor="let s of sourceAccounts">{{s}}</option>
+</select>
+Target : <select>
+    <option *ngFor="let t of targetAccounts">{{t}}</option>
+</select>
+
+
+<hr>
+<!-- ----------------------------------------------------- -->
+<!-- Enter source account number
+<input type="number" [(ngModel)]="sourceAccountNumber"><br>
+
+Enter target account number
+<input type="number" [(ngModel)]="targetAmountNumber"><br>
+
+Enter amount to transfer
+<input type="number" [(ngModel)]="amountToTransfer">
+<br><button (click)="localTransferFunction()">Transfer</button>
+<br><button (click)="localDepositFunction()">Deposit</button>
+
+<hr>
+Source : <select>
+    <option *ngFor="let s of sourceAccounts">{{s}}</option>
+</select>
+Target : <select>
+    <option *ngFor="let t of targetAccounts">{{t}}</option>
+</select>
+Amount :
+<input type="number" [(ngModel)]="amountToTransfer">
+
+<br><button (click)="localTransferFunction()">Transfer</button>
+<hr> -->
+<!-- ---------------------------------------------------- -->
+
+<!-- <table border="5" [cellSpacing]="5" [cellPadding]="5">
+
+    <th>Account Number</th>
+    <th>Account Holder</th>
+    <th>Account Balance</th>
+    <tr>
+        <td>{{bankAccountObj.accountNumber}}</td>
+        <td>{{bankAccountObj.accountHolder}}</td>
+        <td>{{bankAccountObj.accountBalance}}</td>
+    </tr>
+</table>
+<hr> --> -->
+
+<!-- ---------------------------------------------------- --> //4
+Source Account Array ==>
+<table border="5" [cellSpacing]="5" [cellPadding]="5">
+    <th>Account Number</th>
+    <th>Account Holder</th>
+    <th>Account Balance</th>
+    <tr *ngFor="let x of bankAccountSourceArray">
+        <td>{{x.accountNumber}}</td>
+        <td>{{x.accountHolder}}</td>
+        <td>{{x.accountBalance}}</td>
+    </tr>
+</table>
+Target Account Array ==>
+<table border="5" [cellSpacing]="5" [cellPadding]="5">
+    <th>Account Number</th>
+    <th>Account Holder</th>
+    <th>Account Balance</th>
+    <tr *ngFor="let x of bankAccountTargetArray">
+        <td>{{x.accountNumber}}</td>
+        <td>{{x.accountHolder}}</td>
+        <td>{{x.accountBalance}}</td>
+    </tr>
+</table>
+<!-- boxes=> -->
+Source : <select [(ngModel)]="sourceAccountNumber">
+    <option *ngFor="let s of sourceAccounts">{{s}}</option>
+</select>
+Target : <select [(ngModel)]="targetAmountNumber">
+    <option *ngFor="let t of targetAccounts">{{t}}</option>
+</select>
+Amount :
+<input type="number" [(ngModel)]="amountToTransfer">
+
+<br><button (click)="localTransferFunction()">Transfer</button>
+<br><button (click)="localTransferViaService()">Transfer It With SERVICE</button>
+
+<hr>
+<!-- ----------------------------------------------------- -->

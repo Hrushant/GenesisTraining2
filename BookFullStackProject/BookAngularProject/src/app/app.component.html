@@ -1,0 +1,26 @@
+<hr>
+<div class="container2">
+  <br>
+  <h1 class="container3"><u>Welcome to Book Library</u></h1>
+
+  <ul class="container">
+    <li><a routerLink="/showAllBooks"> <button
+          [ngStyle]="{'background-color':'rgb(238, 175, 175)','color':'Red','padding':'10px','font-size':'15px'}">Show
+          all Books </button></a></li>
+    <li><a routerLink="/addBook"> <button
+          [ngStyle]="{'background-color':'rgb(238, 175, 175)','color':'Red','padding':'10px','font-size':'15px'}">
+          Add a Book </button></a></li>
+    <li><a routerLink="/showSingleBook"><button
+          [ngStyle]="{'background-color':'rgb(238, 175, 175)','color':'Red','padding':'10px','font-size':'15px'}">View
+          Book </button></a></li>
+    <li><a routerLink="/modifyBook"> <button
+          [ngStyle]="{'background-color':'rgb(238, 175, 175)','color':'Red','padding':'10px','font-size':'15px'}">Modify
+          a Book </button></a></li>
+    <li><a routerLink="/deleteBook"> <button
+          [ngStyle]="{'background-color':'rgb(238, 175, 175)','color':'Red','padding':'10px','font-size':'15px'}">Delete
+          a Book </button></a></li>
+  </ul>
+  <router-outlet></router-outlet>
+  <br>
+</div>
+<hr>

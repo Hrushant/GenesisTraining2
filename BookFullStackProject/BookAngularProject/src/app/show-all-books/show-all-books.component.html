@@ -1,0 +1,15 @@
+<table border="3" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <button (click)="localViewAllBooks()">View All Book</button>
+    </tr>
+    <tr>
+        <td>Book Id</td>
+        <td>Book Name</td>
+        <td>Book Price</td>
+    </tr>
+    <tr *ngFor="let Book of allBooks">
+        <td>{{Book.bookId}}</td>
+        <td>{{Book.bookName}}</td>
+        <td>{{Book.bookPrice}}</td>
+    </tr>
+</table>

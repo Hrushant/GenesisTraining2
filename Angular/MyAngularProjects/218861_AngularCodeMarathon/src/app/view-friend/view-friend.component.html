@@ -1,0 +1,16 @@
+Enter Friend name To Find : <input type="text" [(ngModel)]="friendNameToSearch">
+<button (click)="localViewFriend()">Find This Friend</button>
+<table *ngIf="foundFriend!=undefined" border="3">
+    <tr>
+        <td>Friend Name</td>
+        <td>Friend Gender</td>
+        <td>Friend Age</td>
+        <td>Years of Friendship </td>
+    </tr>
+    <tr>
+        <td>{{foundFriend.name}}</td>
+        <td>{{foundFriend.gender}}</td>
+        <td>{{foundFriend.age}}</td>
+        <td>{{foundFriend.yearsOfFriendship}}</td>
+    </tr>
+</table>

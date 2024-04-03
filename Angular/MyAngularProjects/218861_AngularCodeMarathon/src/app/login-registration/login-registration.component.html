@@ -1,0 +1,25 @@
+<hr>
+<div class="container">
+    <h1><u>Welcome to Login & Registration Form</u></h1>
+</div>
+
+<div class="container">
+    <button (click)="loginPage()"
+        [ngStyle]="{'color':'white','background-color':'red','padding':'7px','margin-bottom':'8px'}">{{loginLabel}}</button>
+    <button (click)="registrationPage()"
+        [ngStyle]="{'color':'white','background-color':'green','padding':'7px','margin-bottom':'8px'}">{{registrationLabel}}</button>
+</div>
+
+<div class="container">
+    <ng-template *ngIf="isUserLoggedIn==true then ifBlock else elseBlock"></ng-template>
+
+    <ng-template #ifBlock>
+        <app-login></app-login>
+    </ng-template>
+
+    <ng-template #elseBlock>
+        <app-registration></app-registration>
+    </ng-template>
+</div>
+
+<hr>

@@ -1,0 +1,22 @@
+.buttonStyle1{
+    color: brown;
+    padding: 10px;
+    background-color: rgb(166, 229, 166);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.buttonStyle2{
+    color: brown;
+    padding: 10px;
+    background-color: rgb(226, 145, 145);;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.container{
+    background-color: rgb(187, 206, 199);
+    display: flex;
+    justify-content: center;
+
+}

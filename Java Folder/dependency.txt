@@ -1,0 +1,26 @@
+dependancies --> layer(2)
+spring data jpa
+springWeb
+mySql driver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--if we create parameterised constructor then must create default constructor...other wise it not run...
+--if server is busy error occurs then change the server for that add line (server.port = 8090) in application.properties file.
+
+--In JPA ==> persist() --> save() | 
+--In SpringBoot ==> save() --> for --> merge() | update()

@@ -1,0 +1,17 @@
+<p>uploading-downloading works!</p>
+
+
+<br> 
+<button
+    (click)="increaseUploads()"    
+    [ngClass]="uploadButton">
+    {{uploadLabel}}
+    {{uploadCount}}
+</button>
+
+<button 
+    (click)="decreaseUploads()"    
+    [ngClass]="downloadButton">
+    {{downloadLabel}}
+    {{downloadCount}}
+</button>

@@ -1,0 +1,6 @@
+create table Fixed_deposite_account
+(
+    acno int primary key,
+    acname varchar(20),
+    acbal int 
+)

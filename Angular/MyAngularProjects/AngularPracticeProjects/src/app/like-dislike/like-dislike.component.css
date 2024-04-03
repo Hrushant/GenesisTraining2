@@ -1,0 +1,18 @@
+.likeButtonStyle{
+    color: rgb(91, 95, 94);
+    background-color: rgb(247, 212, 212);
+    padding: 40px;
+    font-size: 40px;
+}
+
+.disLikeButtonStyle{
+    color: rgb(91, 95, 94);
+    background-color: rgb(217, 241, 217);
+    padding: 40px;
+    font-size: 40px;
+}
+
+.buttonStyle,h1{
+    display: flex;
+    justify-content: center;
+}

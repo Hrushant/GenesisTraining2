@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd"
+       xmlns:context="http://www.springframework.org/schema/context">   
+  
+
+        <bean id="myRose1" class="com.kpit.Rose" scope="prototype">
+            <constructor-arg index="0" value="Red"/>
+        </bean> 
+
+        <bean id="myRose2" class="com.kpit.Rose" scope="prototype">
+            <constructor-arg index="0" value="Yellow"/>
+        </bean> 
+
+        <bean id="myRose3" class="com.kpit.Rose" scope="prototype">
+            <constructor-arg index="0" value="White"/>
+        </bean> 
+
+        <bean id="myLotus" class="com.kpit.Lotus" scope="prototype">
+            <constructor-arg index="0" value="White"/>
+        </bean> 
+
+
+
+        <bean id="myPiston" class = "com.kpit.Piston" >
+            <constructor-arg index = "0" value = "4 Stroke"/>
+        </bean>
+
+        <bean id="myEngine" class = "com.kpit.Engine" >
+            <constructor-arg index = "0" value = "8 cylinders"/>
+            <constructor-arg index = "1" ref = "myPiston"/>
+        </bean>
+
+        <bean id="myCar" class = "com.kpit.Car" >
+            <constructor-arg index = "0" value = "Maruti-Suzuki"/>
+            <constructor-arg index = "1" ref = "myEngine"/>
+        </bean>
+	
+</beans>

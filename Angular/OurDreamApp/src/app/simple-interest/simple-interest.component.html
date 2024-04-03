@@ -1,0 +1,23 @@
+<Hr>
+<p>simple-interest works!</p>
+<Hr>
+
+    <br>Enter principal amount = <input type="number" value="{{principal}}">
+<br>Enter the number of years = <input type="number" value="{{numberOfYears}}">
+<br>Enter rate of interest = <input type="number" value="{{rateOfInterest}}">
+<br><button (click)="calculateSimpleInterest()">Calculate Simple Interest</button>
+<br>Simple interest is {{simpleInterest}}
+
+<br>Enter principal amount = <input type="number" [value]="principal">
+<br>Enter the number of years = <input type="number" [value]="numberOfYears">
+<br>Enter rate of interest = <input type="number" [value]="rateOfInterest">
+<br><button (click)="calculateSimpleInterest()">Calculate Simple Interest</button>
+<br>Simple interest is {{simpleInterest}}
+<Hr>
+
+<br>Enter principal amount = <input type="number" [(ngModel)]="principal" (input)="calculateSimpleInterest()">
+<br>Enter the number of years = <input type="number" [(ngModel)]="numberOfYears" (input)="calculateSimpleInterest()">
+<br>Enter rate of interest = <input type="number" [(ngModel)]="rateOfInterest" (input)="calculateSimpleInterest()">
+<br><button (click)="calculateSimpleInterest()">Calculate Simple Interest</button>
+<br>Simple interest is {{simpleInterest}}
+<Hr>

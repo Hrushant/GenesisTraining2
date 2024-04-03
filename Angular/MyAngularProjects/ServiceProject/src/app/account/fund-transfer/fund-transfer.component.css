@@ -1,0 +1,56 @@
+.headerStyle {
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.table-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-content: space-between; */
+}
+table {
+    border: 2px black solid;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+ td {
+    border: 3px white solid;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+td {
+    font-weight: bold;
+    color: orange;
+    background-color: black;
+}
+th {
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-div {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: black;
+    color: orange;
+    border: none;
+}
+
+.main-div {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    background-image: linear-gradient(to right, rgb(112, 114, 245), rgb(61, 61, 233)); 
+    border-radius: 30px;
+}

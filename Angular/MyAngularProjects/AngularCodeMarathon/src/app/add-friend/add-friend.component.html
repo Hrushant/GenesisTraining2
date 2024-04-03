@@ -1,0 +1,18 @@
+<table border="3" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <td>Friend Name</td>
+        <td>Friend Gender</td>
+        <td>Friend Age</td>
+        <td>Years of Friendship </td>
+    </tr>
+    <tr>
+        <td><input type="text" [(ngModel)]="blankFriend.name"></td>
+        <td><input type="text" [(ngModel)]="blankFriend.gender"></td>
+        <td><input type="number" [(ngModel)]="blankFriend.age"></td>
+        <td><input type="number" [(ngModel)]="blankFriend.yearsOfFriendship"></td>
+    </tr>
+
+    <tr>
+        <button (click)="localAddFriend()">Add Friend</button>
+    </tr>
+</table>

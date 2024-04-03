@@ -1,0 +1,29 @@
+<hr>
+<div [ngStyle]="{'background-color':'rgb(388, 230, 229)'}">
+<h1 [ngStyle]="{'display':'flex','justify-content':'center'}">Welcome to Compound Interest Page</h1>
+
+<div [ngStyle]="{'display':'flex','justify-content':'center','color':'brown'}">
+<table border="5" [cellPadding]="5" [cellSpacing]="5" >
+    <tr>
+        <td>Enter principal amount (p) : </td>
+        <td><input type="number" [(ngModel)]="principal"></td>
+    </tr>
+    <tr>
+        <td>Enter rate of interest (r) : </td>
+        <td><input type="number" [(ngModel)]="rateOfInterest"></td>
+    </tr>
+    <tr>
+        <td>Enter time (t) : </td>
+        <td><input type="number" [(ngModel)]="time"></td>
+    </tr>
+    <tr>
+        <td>Enter frequency (f) : </td>
+        <td><input type="number" [(ngModel)]="frequencyCompound"></td>
+    </tr>
+</table>
+</div>
+
+
+<h1 [ngStyle]="{'color':'red','display':'flex','justify-content':'center'}"><u>Compound Interest</u>  : {{principal | compoundInterest : rateOfInterest : time : frequencyCompound | currency:"INR"}}</h1>
+</div>
+<hr>
