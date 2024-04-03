@@ -1,0 +1,53 @@
+<!-- <p>fund-transfer works!</p> -->
+<div class="pageStyle">
+<h1 [ngStyle]="{'color':'cyan','background-color':'black'}">Welcome to Fund Transfer page</h1>
+</div>
+<hr>
+
+<div class="pageStyle">
+<h3> Source Account Table</h3>
+</div>
+<div class="pageStyle">
+<table border="5" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <td>Account Number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+        <td>{{sourceAccount.accNo}}</td>
+        <td>{{sourceAccount.accHolderName}}</td>
+        <td>{{sourceAccount.accBal}}</td>
+    </tr>
+</table>
+</div>
+<br><hr>
+
+
+<div class="pageStyle">
+<h3> Target Account Table </h3>
+</div>
+<div class="pageStyle">
+<table border="5" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <td>Account Number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+        <td>{{targetAccount.accNo}}</td>
+        <td>{{targetAccount.accHolderName}}</td>
+        <td>{{targetAccount.accBal}}</td>
+    </tr>
+</table>
+</div>
+<br><hr>
+
+<div class="pageStyle">
+<table>
+    <tr>
+        <td > <b >Enter amount : </b><input type="number" [(ngModel)]="amount"></td>
+        <td><button (click)="localTransferFunds()">Transfer fund</button></td>
+    </tr>
+</table>
+</div>

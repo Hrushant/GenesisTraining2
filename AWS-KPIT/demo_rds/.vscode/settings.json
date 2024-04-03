@@ -1,0 +1,20 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "datahrushant.cn6qkoww88oi.ap-northeast-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "hrush",
+            "database": "sys",
+            "username": "admin",
+            "password": "Password!123"
+        }
+    ]
+}

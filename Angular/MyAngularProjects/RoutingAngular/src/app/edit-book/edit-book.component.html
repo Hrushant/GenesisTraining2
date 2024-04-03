@@ -1,0 +1,20 @@
+<h2>Edit Existing Book</h2>
+
+<table border="5" cellspacing="5" cellpadding="5">
+    <tr>
+        <th>Book Id</th>
+        <th>Book Title</th>
+        <th>Book Author</th>
+        <th>Book Price</th>
+    </tr>
+
+    <tr>
+        <td><input type="number" [(ngModel)]="bookToEdit.bookId"></td>
+        <td><input type="text" [(ngModel)]="bookToEdit.bookName"></td>
+        <td><input type="text" [(ngModel)]="bookToEdit.bookAuthor"></td>
+        <td><input type="number" [(ngModel)]="bookToEdit.bookPrice"></td>
+    </tr>
+    <tr>
+        <button (click)="localEditBook()">Edit This Book</button>
+    </tr>
+</table>

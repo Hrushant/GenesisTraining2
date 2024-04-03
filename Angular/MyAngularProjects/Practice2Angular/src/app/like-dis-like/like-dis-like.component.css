@@ -1,0 +1,21 @@
+.pageStyle{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+}
+
+.button1{
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(236, 154, 154);
+    display: flex;
+    justify-content: center;
+}
+
+.button2{
+    padding: 20px;
+    font-size: 20px;
+    background-color: rgb(158, 245, 158);
+    display: flex;
+    justify-content: center;
+}

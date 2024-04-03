@@ -1,0 +1,30 @@
+<hr>
+<div class="container">
+<h1><u>Calculation of Compound Interest using Pipe</u></h1>
+</div>
+
+<div class="container">
+<table border="5" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <td [ngStyle]="{'color':'brown'}">Enter principal amount (p) : </td>
+        <td><input type="number" [(ngModel)]="principal"></td>
+    </tr>
+    <tr>
+        <td [ngStyle]="{'color':'brown'}">Enter rate of Interest (r) : </td>
+        <td><input type="number" [(ngModel)]="rateOfInterest"></td>
+    </tr>
+    <tr>
+        <td [ngStyle]="{'color':'brown'}">Enter number of times interest is compounded (n) : </td>
+        <td><input type="number" [(ngModel)]="noOfTimesInterestIsCompounded"></td>
+    </tr>
+    <tr>
+        <td [ngStyle]="{'color':'brown'}">Enter time in years (t) : </td>
+        <td><input type="number" [(ngModel)]="timeInYears"></td>
+    </tr>
+</table>
+</div>
+
+<div class="container">
+<h3 [ngStyle]="{'color':'red'}"><u>Compound Interest</u>  : {{principal | compoundInterest : rateOfInterest : noOfTimesInterestIsCompounded : timeInYears | currency : 'INR'}}</h3>
+</div>
+<hr>

@@ -1,0 +1,15 @@
+<!-- For Login Page -->
+<table>
+    <tr>
+        <td>Enter user name : </td>
+        <td><input type="text" [(ngModel)]="userName"></td>
+    </tr>
+    <tr>
+        <td>Enter user email Id : </td>
+        <td><input type="text" [(ngModel)]="userEmail"></td>
+    </tr>
+    <tr>
+        <button (click)="loginPage()"
+            [ngStyle]="{'color':'white','background-color':'blue','padding':'7px','margin-bottom':'8px'}" >Submit</button>
+    </tr>
+</table>

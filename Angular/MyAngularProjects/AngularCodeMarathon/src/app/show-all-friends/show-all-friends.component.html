@@ -1,0 +1,19 @@
+<table border="3" [cellPadding]="5" [cellSpacing]="5">
+    <tr>
+        <button (click)="localViewAllFriends()">View All Friend</button>
+    </tr>
+    <tr>
+        <td>Friend Name</td>
+        <td>Friend Gender</td>
+        <td>Friend Age</td>
+        <td>Years of Friendship </td>
+    </tr>
+    <tr *ngFor="let friend of allFriends">
+        <td>{{friend.name}}</td>
+        <td>{{friend.gender}}</td>
+        <td>{{friend.age}}</td>
+        <td>{{friend.yearsOfFriendship}}</td>
+    </tr>
+
+
+</table>

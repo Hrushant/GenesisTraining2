@@ -1,0 +1,31 @@
+steps
+1. ng new BookStore
+        accept routing
+        acceept css, etc questions
+
+2. open folder in vs code
+3. open terminal [ compulsory ]
+4. ng serve ------ for the compilation
+5. ng g c ViewAllBooks
+6. ng g c ViewSingleBook
+7. ng g c AddBook
+8. ng g c EditBook
+9. ng g c DeleteBook
+10. ng g s Book  <-- make the book service - see the file book.service.ts for detail code
+10. make a new file under app-> Book.ts <-- make data members in it
+11. make routes array in app-routing-module.ts file as line 11 to 18
+                (*** make sure that NO / sign in each path defined ***)
+
+12. make the routerLink in app.component.html file - lines 3 to 9
+        (*** make sure a / sign in each routerLink)
+
+13. go thru the HTML file of each component mapped with its ts file
+14. every ts file is invoking the service functions as per CRUD relevance.
+15. app.component is simply providing the link to invoke each other component
+16. the main DATA of books is kept in service file.
+17. after adding, editing, deleting, a router.navigate function is invoked
+    to goto the ViewAllBooks programatically.
+18. ngIf and ngFor is used wherever applicable in HTMLs
+19. NO validation is required as of now on any entry
+20. no need to verify if the books is duplicate.
+

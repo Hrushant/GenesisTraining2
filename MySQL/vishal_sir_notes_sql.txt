@@ -1,0 +1,65 @@
+
+
+
+
+	QUERYA( QUERYB ( QUERYC) )
+	 |	  |	  |
+	 COLA	COLB	 COLC		
+		  |	  |
+		  TYPE  TYPE 
+		 SINGLE = SINGLE
+		 SINGLE IN (MANY )
+
+
+	SELECT  ...... COLA	SELECT AVG(SAL) FROM EMPLOYEE
+
+
+
+	BOOKS
+	BOOKID   BOOKNAME   BOOKCOST   AID
+	------------------------------------
+	1	 jpl	    ..		55
+	2	 sql	    ...		66
+	3	 angular    ...		--
+	4	 unix
+	5	 c++
+	6	 aws
+	
+
+	AUTHORS
+	------------
+	AUTHORID	AUTHORNAME	AUTHORCITY	BID
+	--------------------------------------------------------
+	55		JAmes		NY		1
+	66		Peter		NJ		2
+	77		Sam		ND		-
+	88		john		NP		-
+	99		janet		Pune		-
+
+
+	1. natural join
+		inner join
+
+	2. equi join
+
+	3. non-equi join
+		MYEMP, SALGRADE
+
+	4. outer join
+		BOOK AND AUTHOR
+	5. left outer join
+
+	6. right outer join
+
+	7. self join
+
+
+
+
+
+
+
+
+
+
+

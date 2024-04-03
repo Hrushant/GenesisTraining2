@@ -1,0 +1,14 @@
+package com.kpit;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Demo8ApplicationTests {
+
+	@Test
+	void contextLoads() {
+		System.out.println("test case 1 is done");
+	}
+
+}

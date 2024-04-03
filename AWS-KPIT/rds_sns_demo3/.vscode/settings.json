@@ -1,0 +1,19 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "hrushdb.cn6qkoww88oi.ap-northeast-1.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "hdr",
+            "database": "sys",
+            "username": "admin",
+            "password": "Password!123"
+        }
+    ]
+}

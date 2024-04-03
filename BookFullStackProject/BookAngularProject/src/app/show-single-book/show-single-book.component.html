@@ -1,0 +1,14 @@
+Enter Book name To Find : <input type="text" [(ngModel)]="BookIdToSearch">
+<button (click)="localViewBookService()">Find This Book</button>
+<table *ngIf="foundBook!=undefined" border="3">
+    <tr>
+        <td>Book Id</td>
+        <td>Book Name</td>
+        <td>Book Price</td>
+    </tr>
+    <tr>
+        <td>{{foundBook.bookId}}</td>
+        <td>{{foundBook.bookName}}</td>
+        <td>{{foundBook.bookPrice}}</td>
+    </tr>
+</table>

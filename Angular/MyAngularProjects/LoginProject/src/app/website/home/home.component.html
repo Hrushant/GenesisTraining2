@@ -1,0 +1,17 @@
+<h1 [ngStyle]="{'text-align':'center', 'background-color':'orange', 'padding':'10px'}">Login & Registration Form</h1>
+
+<button [ngStyle]="{'margin':'10px', 'height':'50px', 'width':'100px', 'background-color':'green', 'color':'white'}"
+[hidden]="isUserLoggedIn" (click)="login()">Login</button>
+<button [ngStyle]="{'margin':'10px', 'height':'50px', 'width':'100px', 'background-color':'red', 'color':'white'}"
+[hidden]="!isUserLoggedIn" (click)="register()">Register</button>
+
+<ng-template *ngIf="isUserLoggedIn==false then ifBlock else elseBlock"></ng-template>
+
+<ng-template #ifBlock>
+    <app-login-form></app-login-form>
+</ng-template>
+<ng-template #elseBlock>
+    <h4 *ngIf="isUserLoggedIn==true">Hi, {{loginForm.userName}}. Logged In successfully</h4>
+    <app-registration-form></app-registration-form>
+</ng-template>
+

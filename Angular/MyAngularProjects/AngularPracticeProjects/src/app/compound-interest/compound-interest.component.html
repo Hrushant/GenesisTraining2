@@ -1,0 +1,24 @@
+<h1 [ngStyle]="{'color':'cyan'}"><u>Calculate Compound Interest</u></h1>
+
+<table>
+    <tr>
+        <td>Enter Principal amount (p) : </td>
+        <input type="number" [(ngModel)]="principal">
+    </tr>
+    <tr>
+        <td>Enter rateOfInterest (r) : </td>
+        <input type="number" [(ngModel)]="rateOfInterest">
+    </tr>
+    <tr>
+        <td>Enter time in years (t) : </td>
+        <input type="number" [(ngModel)]="time">
+    </tr>
+    <tr>
+        <td>Enter frequency monthly : </td>
+        <input type="number" [(ngModel)]="frequencyCompound">
+    </tr>
+</table>
+
+
+<h3><b><u [ngStyle]="{'color':'red'}">Compound Interest</u></b><b [ngStyle]="{'color':'green'}"> : {{principal | compoundInterest : rateOfInterest : time : frequencyCompound | currency:"USD"}}</b></h3>
+

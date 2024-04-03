@@ -1,0 +1,50 @@
+<h1 [ngClass]="headerStyling">Bank Account Page</h1>
+<div class="main-div">
+<div class="table-div">
+<table>
+    <th>Sender Account Details</th>
+    <tr>
+        <td>Account Number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+        <td>{{srcAccount.accNo}}
+        </td>
+        <td>{{srcAccount.accHolderName}}
+        </td>
+        <td>{{srcAccount.accBalance}}
+        </td>
+    </tr>
+</table>
+<table>
+    <th>Receiver Account Details</th>
+    <tr>
+        <td>Account Number</td>
+        <td>Account Holder Name</td>
+        <td>Account Balance</td>
+    </tr>
+    <tr>
+        <td>{{tgtAccount.accNo}}
+        </td>
+        <td>{{tgtAccount.accHolderName}}
+        </td>
+        <td>{{tgtAccount.accBalance}}
+        </td>
+    </tr>
+</table>
+
+</div>
+
+<div class="form-div">
+    <table>
+        <tr>
+            <td>
+                Enter amount to transfer 
+            </td>
+            <td><input type="number" [(ngModel)]="amnt"></td>
+            <td id="button-td"><button (click)="localTransferFunds()">Transfer</button></td>
+        </tr>
+    </table>
+</div>
+</div>

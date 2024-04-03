@@ -1,0 +1,22 @@
+<!-- For registration Page -->
+
+<table>
+    <tr>
+        <td>Enter user name : </td>
+        <td><input type="text" [(ngModel)]="userName"></td>
+    </tr>
+    <tr>
+        <td>Enter user email Id : </td>
+        <td><input type="text" [(ngModel)]="userEmail"></td>
+    </tr>
+    <tr>
+        <td>Enter user address : </td>
+        <td><input type="text" [(ngModel)]="userAddress"></td>
+    </tr>
+    <tr>
+        <td>Enter user phone number : </td>
+        <td><input type="text" [(ngModel)]="userPhone"></td>
+    </tr>
+</table>
+<button (click)="registrationPage()"
+    [ngStyle]="{'color':'white','background-color':'blue','padding':'7px','margin-bottom':'8px'}">Submit</button>

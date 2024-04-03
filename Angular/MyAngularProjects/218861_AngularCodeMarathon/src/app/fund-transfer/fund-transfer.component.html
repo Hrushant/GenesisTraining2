@@ -1,0 +1,46 @@
+<hr>
+<div class="container">
+    <h1><u>Welcome to Fund Transfer Page</u></h1>
+</div>
+
+<div class="container">
+    <table border="3" [cellPadding]="5" [cellSpacing]="5">
+        <th [ngStyle]="{'background-color':'rgb(98, 172, 98)'}">Source Account Table</th>
+        <tr>
+            <td [ngStyle]="{'color':'red'}">Account Number</td>
+            <td [ngStyle]="{'color':'red'}">Account Holder Name</td>
+            <td [ngStyle]="{'color':'red'}">Account Balance</td>
+        </tr>
+        <tr>
+            <td>{{sourceAccount.acno}}</td>
+            <td>{{sourceAccount.acHolderName}}</td>
+            <td>{{sourceAccount.acBalance}}</td>
+        </tr>
+    </table>
+
+    <table border="3" [cellPadding]="5" [cellSpacing]="5">
+        <th [ngStyle]="{'background-color':'rgb(98, 172, 98)'}">Target Account Table</th>
+        <tr>
+            <td [ngStyle]="{'color':'red'}">Account Number</td>
+            <td [ngStyle]="{'color':'red'}">Account Holder Name</td>
+            <td [ngStyle]="{'color':'red'}">Account Balance</td>
+        </tr>
+        <tr>
+            <td>{{targetAccount.acno}}</td>
+            <td>{{targetAccount.acHolderName}}</td>
+            <td>{{targetAccount.acBalance}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container" [ngStyle]="{'margin-top':'10px'}">
+    <table border="3" [cellPadding]="5" [cellSpacing]="5">
+        <tr>
+            Enter amount to transfer :
+            <input type="number" [(ngModel)]="amount">
+            <td><button (click)="loaclTransferFund()" [ngStyle]="{'background-color':'skyblue'}">Transfer
+                    amount</button></td>
+        </tr>
+    </table>
+</div>
+<hr>

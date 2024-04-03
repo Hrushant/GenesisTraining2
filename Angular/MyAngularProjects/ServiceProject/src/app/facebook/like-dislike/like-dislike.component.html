@@ -1,0 +1,15 @@
+<h1 [ngStyle]="{'text-align':'center', 'background-color':'yellow'}">Like Dislike Buttons</h1>
+
+<button (click)="like()" [ngClass]="{'padding':'5px','margin-left':'10px'}"><img src='../../../assets/likebtn.png' height="50" width="50">{{likeCount}}</button>
+<button (click)="dislike()" [ngClass]="{'padding':'5px'}"><img src='../../../assets/dislikebtn.jfif' height="50" width="50">{{dislikeCount}}</button>
+
+
+<!-- <p>like-dis-like works!</p>
+<div>
+  <button (click)="increaseLikes()" [ngClass]="likeButton">
+    {{ likeLabel }} {{ likeCount }}
+  </button>
+  <button (click)="decreseLikes()" [ngClass]="disLikeButton">
+    {{ disLikeLabel }} {{ disLikeCount }}
+  </button>
+</div> -->

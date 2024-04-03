@@ -1,0 +1,392 @@
+--Question-01 - Create Table and Inserting Data -->
+
+--Creating database;
+Create database HRDB;
+use HRDB;
+
+--Creation of table-->
+create table Doctor(doctor_id varchar(6) primary key,dr_first_name varchar(15),de_middle_name varchar(15),dr_last_name varchar(15));
+--inserting the records-->
+insert into Doctor values('D1','Nancy','Jennifer','John');
+insert into Doctor values('D2','Rohan','Madhav','Patil');
+insert into Doctor values('D3','Keshav','Sunil','Thorat');
+insert into Doctor values('D4','Ishwar','Mukesh','Kokate');
+insert into Doctor values('D5','Harsh','Suresh','Gandhi');
+insert into Doctor values('D6','Harish','Mukesh','Rathor');
+insert into Doctor values('D7','Kishan','Suresh','Ubale');
+select * from doctor;
+
+--Creation of table-->
+create table Patient(patient_id varchar(6) primary key,p_first_name varchar(15),p_middle_name varchar(15),p_last_name varchar(15),address varchar(30),city varchar(15),contact_number varchar(10),p_age int);
+--inserting the records-->
+insert into Patient values('P001','Steva',NULL,'William','423, || cross street','Mumbai','8830109747',23);
+insert into Patient values('P002','Stanes',NULL,'William','423, || cross street','Mumbai','9430109747',25);
+insert into Patient values('P003','Om','Nilesh','Pande','416, || Near Ashirwaad Ashram','Pune','9090109747',20);
+insert into Patient values('P004','Abhi','Kishor','Patil','417, || cross street','Pune','7777109747',16);
+insert into Patient values('P005','Pranav','Jaykumar','Bhonde','Near Shri Datt Temple','Amravati','8989109747',29);
+insert into Patient values('P006','Yash','Rajesh','Malik','Near old bus stand','Akola','8000109747',30);
+insert into Patient values('P007','Sanskar','Sunil','Puri','Near old bus cross street','Akola','8833109747',31);
+insert into Patient values('P008','Jivesh','Rajesh','Suryawanshi','Near shri datt temple','Amravati','8899109747',19);
+select * from Patient;
+
+--Creation of table-->
+create table Appointment(apo_number varchar(6) primary key,apo_date date,apo_time varchar(8),apo_reason varchar(30),doctor_id varchar(6) references Doctor(doctor_id),patient_id varchar(6) references Patient(patient_id));
+--inserting the records-->
+insert into Appointment values('A1','2021-08-24','01:00:00','Headache','D1','P001');
+insert into Appointment values('A2','2021-07-20','01:10:00','Nasal block','D3','P002');
+insert into Appointment values('A3','2021-08-24','02:00:00','Back pain','D1','P004');
+insert into Appointment values('A4','2021-07-26','02:05:00','Headache','D2','P003');
+insert into Appointment values('A5','2021-08-21','01:20:00','Nasal block','D4','P005');
+insert into Appointment values('A6','2023-07-15','01:28:00','Back pain','D2','P005');
+insert into Appointment values('A7','2023-07-21','03:20:00','Back pain','D5','P003');
+select * from Appointment;
+
+--Creation of table-->
+create table Bill(bil_number varchar(6) primary key,bil_date date,bil_status varchar(8),bil_amount decimal(7,2),apo_number varchar(6) references Appointment(apo_number));
+--inserting the records-->
+insert into Bill values('B01','2021-08-24','Paid',1000,'A1');
+insert into Bill values('B02','2021-07-20','Pending',900,'A2');
+insert into Bill values('B03','2021-08-19','Paid',1200,'A1');
+insert into Bill values('B04','2021-07-26','Pending',1300,'A3');
+insert into Bill values('B05','2021-07-26','Paid',700,'A4');
+insert into Bill values('B06','2021-07-19','Not Paid',900,'A5');
+select * from Bill;
+
+--Creation of table-->
+create table Payment(payment_id varchar(6) primary key,pay_date date,pay_mode varchar(20),pay_amount decimal(7,2),bil_number varchar(6) references Bill(bil_number));
+--inserting the records-->
+insert into Payment values('1001','2021-07-21','Cash',1000,'B01');
+insert into Payment values('1002','2021-08-28','Paytm',900,'B01');
+insert into Payment values('1003','2021-08-29','Paytm',900,'B02');
+insert into Payment values('1004','2021-08-29','Cash',700,'B04');
+insert into Payment values('1005','2021-07-25','Cash',700,'B03');
+insert into Payment values('1006','2021-07-25','Check',7000,'B05');
+select * from Payment;
+
+--====================================================================================================================================================================================
+--====================================================================================================================================================================================
+
+
+
+
+--Question-02 - Joins and subquery -->
+
+--=====================================================================================================================================================================================
+
+--01-->
+use hrdb;
+
+Select concat(d.dr_first_name,' ',d.dr_last_name) as 'Doctor Name',count(apo_number) as Count_Of_Appointments 
+from Doctor d,Appointment a,Patient p
+where p.patient_id = a.patient_id
+and a.doctor_id = d.doctor_id
+group by d.doctor_id,d.dr_first_name,d.dr_last_name;
+
+--=====================================================================================================================================================================================
+
+--02-->
+Select AVG(p_age) as 'Avg_age_of_Patients' 
+from Appointment a,Patient p 
+where a.patient_id = p.patient_id 
+and DATEPART(month,apo_date) = 7 
+and DATEPART(year,apo_date) = 2021;
+
+
+--=====================================================================================================================================================================================
+
+--03-->
+Select concat(p.p_first_name,' ',p.p_last_name) as 'Patient Name',sum(bil_amount) as 'Total Bill' 
+from Bill b,Patient p, Appointment a 
+where b.apo_number = a.apo_number
+and p.patient_id = a.patient_id 
+group by p.p_first_name,p.p_last_name;
+
+--=====================================================================================================================================================================================
+
+--04-->
+Select p.p_first_name,p.city,a.apo_date,pay.pay_mode,pay.pay_date 
+from Patient p,Appointment a,Payment pay,Bill b 
+where p.patient_id = a.patient_id
+and a.apo_number = b.apo_number
+and pay.bil_number = b.bil_number 
+and pay.pay_mode = 'Cash';
+
+--=====================================================================================================================================================================================
+
+--05-->
+Select concat(d.dr_first_name,' ',d.de_middle_name,' ',d.dr_last_name) as 'Full Name',count(a.apo_number) as 'Total Appointments' 
+from Doctor d,Appointment a
+where d.doctor_id = a.doctor_id
+group by d.dr_first_name,d.de_middle_name,d.dr_last_name
+Order by count(a.apo_number) DESC;
+
+--=====================================================================================================================================================================================
+--=====================================================================================================================================================================================
+
+
+
+
+
+--Question-03 - Functions -->
+
+--=====================================================================================================================================================================================
+
+--01-->
+Go
+Create function Appointment_for_given_date(@Given_date date) 
+returns @Appointment_Table Table (Appointment_number varchar(6),apo_date date)
+As
+Begin
+	INSERT @Appointment_Table
+	Select Apo_number,apo_date from Appointment where apo_date=@Given_date;
+	return
+END;
+
+Select * from Appointment_for_given_date('2021-08-24');
+
+--=====================================================================================================================================================================================
+
+--02-->
+
+Go
+Create function Total_Appointment(@Doctor_id varchar(6)) 
+returns @Total_Appointment_Table Table (apoNumber varchar(6),apoDate date,apoTime varchar(20),apoReason varchar(20))
+As
+Begin
+	INSERT @Total_Appointment_Table
+	Select  a.apo_number,a.apo_date,a.apo_time,a.apo_reason from Appointment a,Patient p
+	where a.patient_id = p.patient_id
+	and doctor_id = @Doctor_id;
+	return
+END;
+
+select * from Total_Appointment('D1');
+
+--=====================================================================================================================================================================================
+
+--03-->
+
+Go
+Create function Latest_Appointment_date(@Doc_Id varchar(6))
+returns @Latest_Appointment Table (Appointment_Date date)
+As
+Begin
+	INSERT @Latest_Appointment
+	Select max(apo_date) from Doctor d,Appointment a
+	where d.doctor_id = a.doctor_id
+	and d.doctor_id = @Doc_Id
+	return
+END;
+
+Select * from Latest_Appointment_date('D2');
+
+--=====================================================================================================================================================================================
+
+--04-->
+
+Go
+Create function Appointment_Count(@Doc_first_name varchar(20))
+returns @Table Table (count_of_Appointment int)
+As
+Begin
+	INSERT @Table
+	Select count(a.apo_number) from Doctor d,Appointment a
+	where d.doctor_id=a.doctor_id
+	and d.dr_first_name=@Doc_first_name;
+	return
+END;
+
+Select * from Appointment_Count('Rohan');
+
+--=====================================================================================================================================================================================
+
+--05-->
+
+Go
+Create function Appointment_Reason(@Appo_Reason varchar(30))
+Returns @Appointment_Reason_Table Table (Patient_First_name varchar(20),doctor_first_name varchar(20),apo_date date,apo_reason varchar(20))
+As
+Begin
+	INSERT @Appointment_Reason_Table
+	Select p.p_first_name as 'Patient Name',d.dr_first_name,a.apo_date,a.apo_reason from Appointment a,Patient p,Doctor d
+	where a.patient_id = p.patient_id
+	and d.doctor_id = a.doctor_id
+	and a.apo_reason=@Appo_Reason;
+	Return
+END;
+
+Select * from Appointment_Reason('Nasal block');
+
+--=====================================================================================================================================================================================
+--=====================================================================================================================================================================================
+
+
+
+
+
+--Question-04 - Stored Procedure --> 
+
+--=====================================================================================================================================================================================
+
+--01-->
+use hrdb;
+
+Create procedure Updation_Of_phoneNumber(@pit_id varchar(20),@phone_number varchar(20))
+As
+Begin
+	Declare @patient_id varchar(6)
+
+	Select @patient_id=patient_id from Patient where patient_id=@pit_id;
+	if(@patient_id is NULL)
+		select 'ID NOT found'
+	else
+		Update patient Set contact_number = @phone_number
+		where patient_id = @pit_id
+End;
+
+Execute Updation_Of_phoneNumber 'P001','1212121212';
+
+
+--=====================================================================================================================================================================================
+
+--02-->
+
+Create procedure Bill_status
+As
+Begin
+	Select p.patient_id,p.p_first_name,p.address,a.apo_number,b.bil_amount 
+	from Patient p,Appointment a,Bill b 
+	where b.bil_status='Not Paid'
+	and p.patient_id = a.patient_id
+	and b.apo_number = a.apo_number
+	order by a.apo_number DESC;
+End;
+
+Execute Bill_status;
+
+--=====================================================================================================================================================================================
+
+--03-->
+
+Create procedure Doctor_Not_Having_Appointment
+As
+Begin
+	Select d.doctor_id,concat(d.dr_first_name,' ',d.dr_last_name) as 'FULL NAME' 
+	from Doctor d where d.doctor_id NOT IN (Select doctor_id from Appointment)
+	Order by d.doctor_id DESC;
+END;
+
+Execute Doctor_Not_Having_Appointment;
+
+--=====================================================================================================================================================================================
+
+--04-->
+
+Create procedure patient_living(@city varchar(20))
+As
+Begin
+	select concat(p.p_first_name,' ',p.p_middle_name,' ',p.p_last_name) as 'Patients FULL NAME',a.apo_date,concat(d.dr_first_name,' ',d.de_middle_name,' ',d.dr_last_name) as 'Doctors FULL NAME' 
+	from Appointment a,patient p,doctor d 
+	where a.doctor_id = d.doctor_id
+	and a.patient_id = p.patient_id
+	and p.city = @city;
+End;
+
+Exec patient_living Amravati;
+
+--=====================================================================================================================================================================================
+
+--05-->
+
+Create procedure Total_bill_amount_procedure(@patient_id varchar(6),@total_bill_amount decimal(7,2) OUT)
+As
+Begin
+	select @total_bill_amount =  pay_amount from payment pay,Bill b,Patient p,Appointment a 
+	where pay.bil_number = b.bil_number
+	and b.apo_number = a.apo_number
+	and p.patient_id = a.patient_id
+	and p.patient_id = @patient_id;
+End;
+
+Declare @total_bill decimal(7,2)
+Exec Total_bill_amount_procedure 'P001',@total_bill OUTPUT;
+Select @total_bill as 'Total_Value'
+
+
+--=====================================================================================================================================================================================
+--=====================================================================================================================================================================================
+
+
+
+
+
+
+--Question-05 - Create View -->
+
+--=====================================================================================================================================================================================
+
+--01-->
+
+Create view Patient_view as
+Select p.p_first_name,p.p_last_name,p.p_age,d.dr_first_name,a.apo_date,a.apo_time 
+from Patient p,Doctor d,Appointment a
+where p.patient_id = a.patient_id
+and d.doctor_id = a.doctor_id;
+
+Select * from Patient_view;
+
+
+--=====================================================================================================================================================================================
+
+--02-->
+
+Create view Patient_Bill_view as
+Select p.patient_id,p.p_first_name,p.p_middle_name,p.p_last_name,p.address,p.city,p.contact_number,p.p_age,b.bil_number,b.bil_date,b.bil_status,b.bil_amount,pay.payment_id,pay.pay_date,pay.pay_mode,pay.pay_amount
+from Patient p,Bill b,Payment pay,Appointment a
+where p.patient_id = a.patient_id
+and b.apo_number = a.apo_number
+and pay.bil_number = b.bil_number;
+
+Select * from Patient_Bill_view;
+
+--=====================================================================================================================================================================================
+
+--03-->
+
+Create View Doctor_view as
+Select d.doctor_id,d.dr_first_name,d.de_middle_name,d.dr_last_name,a.apo_number,a.apo_date,a.apo_time,a.apo_reason
+from Appointment a,doctor d
+where a.doctor_id = d.doctor_id;
+
+Select * from Doctor_view;
+
+--=====================================================================================================================================================================================
+
+--04-->
+
+Create view Doctor_details as
+Select d.dr_first_name,d.dr_last_name,p.p_first_name,p.p_last_name,a.apo_date,a.apo_time,a.apo_reason
+from Doctor d,Patient p,Appointment a
+where a.doctor_id = d.doctor_id
+and p.patient_id = a.patient_id;
+
+Select * from Doctor_details;
+
+--=====================================================================================================================================================================================
+
+--05-->
+
+Create view Patient_view as
+Select p.patient_id,p.p_first_name,p.p_last_name,p.address,p.city,p.contact_number,p.p_age,pay.payment_id,pay.pay_date,pay.pay_mode,pay.pay_amount 
+from patient p,payment pay,bill b,Appointment a
+where p.patient_id = a.patient_id
+and a.apo_number = b.apo_number
+and pay.bil_number = b.bil_number
+and b.bil_status = 'Paid';
+
+Select * from Patient_view;
+
+--=====================================================================================================================================================================================
+--=====================================================================================================================================================================================
+
+
